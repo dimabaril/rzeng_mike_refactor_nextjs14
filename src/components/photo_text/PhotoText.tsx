@@ -1,6 +1,4 @@
 import Image from "next/image";
-import styles from "./PhotoText.module.css";
-import ring from "/public/images/ring.png";
 import BlackHole from "@/components/black_hole/BlackHole";
 
 export default function PhotoText() {
