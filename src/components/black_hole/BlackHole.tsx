@@ -34,7 +34,7 @@ export default function BlackHole() {
 
       <Modal
         className="p-0"
-        width={800}
+        width={1080}
         // height={450}
         centered
         title={null}
@@ -42,12 +42,18 @@ export default function BlackHole() {
         open={isModalOpen}
         onCancel={handleCancel}
         keyboard={true}
+        styles={{ body: { backgroundColor: "black" } }}
         modalRender={(modal) => {
           return React.isValidElement<React.HTMLAttributes<HTMLDivElement>>(
             modal,
           )
             ? React.cloneElement(modal, {
-                style: { ...modal.props.style, borderRadius: 0, padding: 0 },
+                style: {
+                  ...modal.props.style,
+                  borderRadius: 0,
+                  padding: 40,
+                  backgroundColor: "#222",
+                },
               })
             : null;
         }}
@@ -57,8 +63,8 @@ export default function BlackHole() {
           Your browser does not support the video tag.
         </video> */}
         <iframe
-          width="800"
-          height="450"
+          width="1000"
+          height="562"
           src="https://player.vimeo.com/video/280087401?autoplay=1&loop=1"
           title="Vimeo video player"
           allow="autoplay; fullscreen; picture-in-picture"

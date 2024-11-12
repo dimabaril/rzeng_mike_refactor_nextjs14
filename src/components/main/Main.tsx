@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import styles from "./Main.module.css";
 
+import CenterLine from "../center_line/CenterLine";
+
 export default function Main() {
   const frontLayerRef = useRef<HTMLDivElement>(null);
 
@@ -38,8 +40,10 @@ export default function Main() {
 
       <div
         ref={frontLayerRef}
-        className={`${styles.parallax__layer} absolute top-1/4 w-2/12 bg-center_line bg-contain opacity-70`}
-      ></div>
+        className={`${styles.parallax__layer} absolute top-1/4 w-2/12 bg-contain opacity-70`}
+      >
+        <CenterLine />
+      </div>
     </div>
   );
 }

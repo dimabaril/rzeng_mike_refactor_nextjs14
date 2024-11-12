@@ -1,0 +1,14 @@
+@keyframes moveBackground {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.bg_moving {
+  background-image: url("/images/center_line.png");
+  background-repeat: repeat-y;
+  animation: moveBackground 60s linear infinite;
+}
