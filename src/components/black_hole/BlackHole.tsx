@@ -33,7 +33,7 @@ export default function BlackHole() {
       />
 
       <Modal
-        className="bg-red-500 p-0"
+        className="p-0"
         width={800}
         // height={450}
         centered
@@ -42,11 +42,15 @@ export default function BlackHole() {
         open={isModalOpen}
         onCancel={handleCancel}
         keyboard={true}
-        modalRender={(modal) =>
-          React.cloneElement(modal, {
-            style: { ...modal.props.style, borderRadius: 0, padding: 0 },
-          })
-        }
+        modalRender={(modal) => {
+          return React.isValidElement<React.HTMLAttributes<HTMLDivElement>>(
+            modal,
+          )
+            ? React.cloneElement(modal, {
+                style: { ...modal.props.style, borderRadius: 0, padding: 0 },
+              })
+            : null;
+        }}
       >
         {/* <video width="640" height="480" autoPlay muted loop>
           <source src="/videos/coffee.mp4" type="video/mp4" />
@@ -57,9 +61,7 @@ export default function BlackHole() {
           height="450"
           src="https://player.vimeo.com/video/280087401?autoplay=1&loop=1"
           title="Vimeo video player"
-          frameborder="0"
           allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
         ></iframe>
         {/* <iframe
           width="800"
