@@ -1,0 +1,26 @@
+.hide_scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hide_scrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.parallax {
+  position: relative;
+}
+
+.parallax__layer {
+  left: 45%;
+  height: 200%;
+}
+
+/* .smooth_edges {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.blur_background {
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+} */

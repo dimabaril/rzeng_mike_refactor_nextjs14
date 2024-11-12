@@ -1,0 +1,17 @@
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.scroll_on_hover {
+  overflow: hidden;
+}
+
+.scroll_on_hover:hover > div {
+  animation: scroll 0.8s linear infinite;
+}
