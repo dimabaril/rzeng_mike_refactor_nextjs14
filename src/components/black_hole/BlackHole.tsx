@@ -65,7 +65,7 @@ export default function BlackHole() {
         <iframe
           width="1000"
           height="562"
-          src="https://player.vimeo.com/video/280087401?autoplay=1&loop=1#t=6s"
+          src="https://player.vimeo.com/video/280087401?autoplay=1&loop=1&controls=0#t=6s"
           allow="autoplay; fullscreen"
         ></iframe>
       </Modal>
