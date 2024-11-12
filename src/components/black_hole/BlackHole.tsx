@@ -65,21 +65,9 @@ export default function BlackHole() {
         <iframe
           width="1000"
           height="562"
-          src="https://player.vimeo.com/video/280087401?autoplay=1&loop=1"
-          title="Vimeo video player"
-          allow="autoplay; fullscreen; picture-in-picture"
+          src="https://player.vimeo.com/video/280087401?autoplay=1&loop=1#t=6s"
+          allow="autoplay; fullscreen"
         ></iframe>
-        {/* <iframe
-          width="800"
-          height="450"
-          src="https://www.youtube.com/embed/9UqYTZLymtQ?si=ZhHSk3OIIDH3qUwX&autoplay=1&controls=0"
-          title="YouTube video player"
-          controls="0"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe> */}
       </Modal>
     </>
   );
