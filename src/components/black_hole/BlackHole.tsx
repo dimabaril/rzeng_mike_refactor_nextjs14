@@ -28,7 +28,7 @@ export default function BlackHole() {
         alt="ring"
         // width={300}
         // height={300}
-        className={`${styles.shake} w-1/2 self-center object-contain`}
+        className={`${styles.shake} w-1/2 self-center object-contain hover:cursor-pointer`}
         onClick={showModal}
       />
 

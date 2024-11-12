@@ -47,14 +47,6 @@ export default function PhotoText() {
         </p>
       </div>
 
-      <Image
-        src={ring}
-        alt="ring"
-        // width={300}
-        // height={300}
-        className={`${styles.shake} w-1/2 self-center object-contain`}
-      />
-
       <BlackHole />
     </div>
   );
