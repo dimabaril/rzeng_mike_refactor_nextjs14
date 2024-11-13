@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Modal } from "antd";
 import Image from "next/image";
 import ring from "/public/images/ring.png";
@@ -8,9 +8,13 @@ import styles from "./BlackHole.module.css";
 
 export default function BlackHole() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const showModal = () => {
     setIsModalOpen(true);
+    if (iframeRef.current) {
+      iframeRef.current.contentWindow?.postMessage('{"method":"play"}', "*");
+    }
   };
 
   // const handleOk = () => {
@@ -18,6 +22,9 @@ export default function BlackHole() {
   // };
 
   const handleCancel = () => {
+    if (iframeRef.current) {
+      iframeRef.current.contentWindow?.postMessage('{"method":"pause"}', "*");
+    }
     setIsModalOpen(false);
   };
 
@@ -63,6 +70,7 @@ export default function BlackHole() {
           Your browser does not support the video tag.
         </video> */}
         <iframe
+          ref={iframeRef}
           width="1000"
           height="562"
           src="https://player.vimeo.com/video/280087401?autoplay=1&loop=1&controls=0#t=6s"
