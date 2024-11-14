@@ -4,12 +4,16 @@ import VerticalWhite from "@/components/vertical_white/VerticalWhite";
 import Main from "@/components/main/Main";
 import PhotoText from "@/components/photo_text/PhotoText";
 import TitleMain from "@/components/title_main/TitleMain";
+import Contacts from "@/components/contacts/Contacts";
 
 export default function Home() {
   return (
     <main className="flex h-screen w-full">
       <div className="fixed right-1/4 top-20 z-30 translate-x-1/4">
         <TitleMain />
+      </div>
+      <div className="absolute left-24 top-16 z-10">
+        <Contacts />
       </div>
       <div className="fixed right-1/4 z-10 w-1/4 -translate-x-1/4">
         <PhotoText />
