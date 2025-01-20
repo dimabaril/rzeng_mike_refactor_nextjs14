@@ -6,7 +6,7 @@ import Main from "@/components/main/Main";
 import TitleMain from "@/components/title_main/TitleMain";
 import Contacts from "@/components/contacts/Contacts";
 import Particles from "@/components/particules/Particles";
-import BlackHole from "@/components/black_hole/BlackHole";
+// import BlackHole from "@/components/black_hole/BlackHole";
 
 export default function Home() {
   return (
