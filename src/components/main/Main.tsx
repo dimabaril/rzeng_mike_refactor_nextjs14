@@ -74,7 +74,7 @@ export default function Main() {
       </video>
 
       <div>
-        fractal freedom that's what we strive for, but in
+        fractal freedom that&apos;s what we strive for, but in
         fact..........................................
       </div>
 
