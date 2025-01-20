@@ -35,7 +35,7 @@ export default function BlackHole() {
         alt="ring"
         // width={300}
         // height={300}
-        className={`${styles.shake} w-1/2 self-center object-contain hover:cursor-pointer`}
+        className={`${styles.shake} object-contain hover:cursor-pointer`}
         onClick={showModal}
       />
 
@@ -59,7 +59,7 @@ export default function BlackHole() {
                   ...modal.props.style,
                   borderRadius: 0,
                   padding: 40,
-                  backgroundColor: "#222",
+                  backgroundColor: "#000000",
                 },
               })
             : null;

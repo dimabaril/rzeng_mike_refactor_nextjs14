@@ -1,11 +1,18 @@
-// // useless until now
-
-// export default function CenterLine() {
-//   return <div className="h-full bg-center_line bg-contain"></div>;
-// }
-
+import React, { useEffect, useState } from "react";
+import generateGradient from "./generateGradient";
 import styles from "./CenterLine.module.css";
 
 export default function CenterLine() {
-  return <div className={`h-full ${styles.bg_moving}`}></div>;
+  const [gradient, setGradient] = useState("");
+
+  useEffect(() => {
+    setGradient(generateGradient());
+  }, []);
+
+  return (
+    <div
+      className={`${styles.bg_moving} min-h-screen w-full`}
+      style={{ backgroundImage: gradient }}
+    />
+  );
 }

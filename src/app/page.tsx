@@ -1,38 +1,40 @@
 import Aside from "@/components/aside/Aside";
-import VerticalBw from "@/components/vertical_bw/VerticalBw";
-import VerticalWhite from "@/components/vertical_white/VerticalWhite";
+// import VerticalBw from "@/components/vertical_bw/VerticalBw";
+// import VerticalWhite from "@/components/vertical_white/VerticalWhite";
 import Main from "@/components/main/Main";
-import PhotoText from "@/components/photo_text/PhotoText";
+// import PhotoText from "@/components/photo_text/PhotoText";
 import TitleMain from "@/components/title_main/TitleMain";
 import Contacts from "@/components/contacts/Contacts";
+import Particles from "@/components/particules/Particles";
+import BlackHole from "@/components/black_hole/BlackHole";
 
 export default function Home() {
   return (
     <main className="flex h-screen w-full">
-      <div className="fixed right-1/4 top-20 z-30 translate-x-1/4">
-        <TitleMain />
+      <div className="fixed h-full w-full">
+        <Aside />
       </div>
-      <div className="absolute left-24 top-16 z-10">
-        <Contacts />
-      </div>
-      <div className="fixed right-1/4 z-10 w-1/4 -translate-x-1/4">
-        <PhotoText />
-      </div>
-      <div className="w-8/12">
-        <Main />
-      </div>
-      <div className="fixed right-0 z-10 flex w-4/12 flex-row">
-        <div className="flex w-1/2 flex-row">
-          <div className="w-1/2 opacity-50">
-            <VerticalWhite />
-          </div>
-          <div className="w-1/2">
-            <VerticalBw />
+
+      {/* <div className="mx-auto max-w-screen-xl"> */}
+      <div className="relative mx-auto w-[1200px]">
+        {/* <div className="relative h-[500px]"> */}
+        <div className="relative h-1/2">
+          <Particles />
+
+          <div className="absolute bottom-1/2 right-1/4 translate-x-1/2 translate-y-1/2">
+            <TitleMain />
           </div>
         </div>
-        <div className="w-1/2">
-          <Aside />
+
+        <div className="text-xl text-white">
+          <Main />
         </div>
+
+        <div className="flex justify-center py-40 text-xl text-white">
+          <Contacts />
+        </div>
+
+        {/* <BlackHole /> */}
       </div>
     </main>
   );

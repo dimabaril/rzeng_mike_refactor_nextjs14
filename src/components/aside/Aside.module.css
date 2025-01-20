@@ -1,17 +1,45 @@
-@keyframes scroll {
+.sub_container {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to top,
+    black 0%,
+    black 58%,
+    white 60%,
+    black 62%,
+    black 63%,
+    white 65%,
+    black 67%,
+    black 100%
+  );
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  animation: move 15s linear infinite;
+}
+
+.container:hover {
+  animation: move-reverse 2s linear infinite;
+}
+
+@keyframes move {
   0% {
     transform: translateY(0);
   }
-
   100% {
     transform: translateY(-100%);
   }
 }
 
-.scroll_on_hover {
-  overflow: hidden;
-}
-
-.scroll_on_hover:hover > div {
-  animation: scroll 0.8s linear infinite;
+@keyframes move-reverse {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
