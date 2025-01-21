@@ -3,7 +3,6 @@
 import Image from "next/image";
 
 import { useEffect, useRef } from "react";
-// import styles from "./Main.module.css";
 
 import CenterLine from "../center_line/CenterLine";
 import BlackHole from "../black_hole/BlackHole";
@@ -29,12 +28,10 @@ export default function Main() {
     <div className={"relative h-full"}>
       <div className="flex flex-col">
         <Image
-          // className="bg-black pb-32 pr-32"
-          src="/images/photo_duo.jpg"
-          alt="photo duo"
+          src="/images/photo_duo_bottom.png"
+          alt="photo"
           width={800}
           height={0}
-          // className="self-center"
         />
 
         <div className="ml-auto w-1/2">
@@ -80,7 +77,7 @@ export default function Main() {
 
       <Image
         src="/images/Copy of IMG_0349-cc.jpg"
-        alt="photo duo bottom"
+        alt="photo"
         width={1200}
         height={0}
         className="w-full"

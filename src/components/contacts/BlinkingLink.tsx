@@ -13,7 +13,7 @@ export default function BlinkingLink({ href }: BlinkingLinkProps) {
   useEffect(() => {
     const blink = () => {
       setIsBlinking(true);
-      setOpacity(Math.random() * 0.7 + 0.3); // Случайная яркость от 0.7 до 1
+      setOpacity(Math.random() * 0.7 + 0.3); // Случайная яркость от 0.3 до 1
       setTimeout(
         () => {
           setIsBlinking(false);
@@ -35,7 +35,7 @@ export default function BlinkingLink({ href }: BlinkingLinkProps) {
 
   return (
     <a
-      className={"block"}
+      className={"block p-1"}
       href={href}
       target="_blank"
       // rel="noreferrer"
