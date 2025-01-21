@@ -4,8 +4,9 @@ import Image from "next/image";
 
 import { useEffect, useRef } from "react";
 
-import CenterLine from "../center_line/CenterLine";
-import BlackHole from "../black_hole/BlackHole";
+import CenterLine from "@/components/center_line/CenterLine";
+import BlackHole from "@/components/black_hole/BlackHole";
+import TextGradientBg from "@/components/text_gradient_bg/TextGradientBg";
 
 export default function Main() {
   const frontLayerRef = useRef<HTMLDivElement>(null);
@@ -70,10 +71,7 @@ export default function Main() {
         Your browser does not support the video tag.
       </video>
 
-      <div>
-        fractal freedom that&apos;s what we strive for, but in
-        fact..........................................
-      </div>
+      <TextGradientBg />
 
       <Image
         src="/images/Copy of IMG_0349-cc.jpg"

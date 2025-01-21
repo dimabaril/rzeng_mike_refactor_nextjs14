@@ -17,10 +17,6 @@ export default function BlackHole() {
     }
   };
 
-  // const handleOk = () => {
-  //   setIsModalOpen(false);
-  // };
-
   const handleCancel = () => {
     if (iframeRef.current) {
       iframeRef.current.contentWindow?.postMessage('{"method":"pause"}', "*");
@@ -65,10 +61,6 @@ export default function BlackHole() {
             : null;
         }}
       >
-        {/* <video width="640" height="480" autoPlay muted loop>
-          <source src="/videos/coffee.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video> */}
         <iframe
           ref={iframeRef}
           width="1000"

@@ -8,10 +8,10 @@ function getSequentialColor(index: number, totalColors: number) {
 // Функция для генерации списка цветов
 function generateColors(colorCount: number): string[] {
   const colors = [];
-  for (let i = 0; i < colorCount; i++) {
+  for (let i = colorCount; i > 0; i--) {
     colors.push(getSequentialColor(i, colorCount));
   }
-  for (let i = colorCount; i > 0; i--) {
+  for (let i = 0; i < colorCount; i++) {
     colors.push(getSequentialColor(i, colorCount));
   }
   return colors;
@@ -20,13 +20,13 @@ function generateColors(colorCount: number): string[] {
 function generateGradient(colorCount: number) {
   const colors = generateColors(colorCount);
 
-  let gradient = "repeating-linear-gradient(0deg, ";
+  let gradient = "repeating-linear-gradient(90deg, ";
   let position = 0;
-  const smoothness = 2; // Сглаживание перехода
+  const smoothness = 6; // Сглаживание перехода
 
   for (let i = 0; i < colors.length; i++) {
     const size = Math.floor(Math.random() * 10) + 20; // Размер от 20px до 70px
-    const gap = Math.floor(Math.random() * 5) + 7; // Промежуток от 10px до 40px
+    const gap = Math.floor(Math.random() * 2) + 2; // Промежуток от 10px до 40px
     gradient += `${colors[i]} ${position}px, ${colors[i]} ${position + size}px, `;
     position += size + smoothness;
     gradient += `transparent ${position}px, transparent ${position + gap}px, `;
