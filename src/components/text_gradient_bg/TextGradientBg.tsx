@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import generateGradient from "./generateGradient";
+import styles from "./RunningLine.module.css";
 
 const COLORS_COUNT = 15;
 
@@ -12,13 +13,29 @@ const TextGradientBg = () => {
 
   return (
     <div
-      className={"py-2 text-center text-2xl"}
+      className="overflow-hidden whitespace-nowrap py-2 text-2xl"
       style={{
         background: gradient,
       }}
     >
-      fractal freedom that&apos;s what we strive for, but in
-      fact..........................................
+      <div className={`${styles.animate_marquee} inline-block`}>
+        <span>
+          ....................fractal freedom that&apos;s what we strive for,
+          but in fact....................
+        </span>
+        <span>
+          ....................fractal freedom that&apos;s what we strive for,
+          but in fact....................
+        </span>
+        <span>
+          ....................fractal freedom that&apos;s what we strive for,
+          but in fact....................
+        </span>
+        <span>
+          ....................fractal freedom that&apos;s what we strive for,
+          but in fact....................
+        </span>
+      </div>
     </div>
   );
 };

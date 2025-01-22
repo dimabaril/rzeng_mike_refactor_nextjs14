@@ -109,7 +109,7 @@ const Particles = () => {
     scene.add(ParticlesSystem);
 
     // Камера и вращение
-    camera.position.z = 8;
+    camera.position.z = 13;
 
     const dampingFactor = 0.98; // Damping factor for gradual deceleration
     const minRotationSpeed = 0.005; // Minimum rotation speed
