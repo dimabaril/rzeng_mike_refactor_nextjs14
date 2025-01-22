@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 const OPACITY_MIN = 0.3;
 const OPACITY_MAX = 1;
@@ -29,16 +29,27 @@ export default function BlinkingContainer({
   const [isBlinking, setIsBlinking] = useState(false);
   const [opacity, setOpacity] = useState(1);
 
+  const opacityMinRef = useRef(opacityMin);
+  const opacityMaxRef = useRef(opacityMax);
+  const blinkDurationMinRef = useRef(blinkDurationMin);
+  const blinkDurationMaxRef = useRef(blinkDurationMax);
+  const blinkIntervalMinRef = useRef(blinkIntervalMin);
+  const blinkIntervalMaxRef = useRef(blinkIntervalMax);
+
   useEffect(() => {
     const blink = () => {
       setIsBlinking(true);
-      setOpacity(Math.random() * (opacityMax - opacityMin) + opacityMin); // Случайная яркость от 0.3 до 1
+      setOpacity(
+        Math.random() * (opacityMaxRef.current - opacityMinRef.current) +
+          opacityMinRef.current,
+      ); // Случайная яркость от 0.3 до 1
       setTimeout(
         () => {
           setIsBlinking(false);
         },
-        Math.random() * (blinkDurationMax - blinkDurationMin) +
-          blinkDurationMin,
+        Math.random() *
+          (blinkDurationMaxRef.current - blinkDurationMinRef.current) +
+          blinkDurationMinRef.current,
       ); // Продолжительность мигания от 50 до 250 мс
     };
 
@@ -47,11 +58,14 @@ export default function BlinkingContainer({
         blink();
         setTimeout(
           blink,
-          Math.random() * (blinkDurationMax - blinkDurationMin) +
-            blinkDurationMin,
+          Math.random() *
+            (blinkDurationMaxRef.current - blinkDurationMinRef.current) +
+            blinkDurationMinRef.current,
         ); // Второе мигание через случайное время
       },
-      Math.random() * (blinkIntervalMax - blinkIntervalMin) + blinkIntervalMin,
+      Math.random() *
+        (blinkIntervalMaxRef.current - blinkIntervalMinRef.current) +
+        blinkIntervalMinRef.current,
     ); // Интервал между миганиями от 500 до 3500 мс
 
     return () => clearInterval(interval);

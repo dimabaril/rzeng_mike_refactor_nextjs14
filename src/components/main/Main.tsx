@@ -8,7 +8,7 @@ import CenterLine from "@/components/center_line/CenterLine";
 import BlackHole from "@/components/black_hole/BlackHole";
 import TextGradientBg from "@/components/text_gradient_bg/TextGradientBg";
 
-import styles from "./Main.module.css";
+// import styles from "./Main.module.css";
 
 export default function Main() {
   const frontLayerRef = useRef<HTMLDivElement>(null);
