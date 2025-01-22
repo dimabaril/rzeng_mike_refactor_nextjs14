@@ -6,7 +6,7 @@ import Particles from "@/components/particules/Particles";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-hidden">
       <div className="fixed w-full">
         <Aside />
       </div>

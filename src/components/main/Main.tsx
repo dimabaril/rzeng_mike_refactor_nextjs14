@@ -11,10 +11,10 @@ import TextGradientBg from "@/components/text_gradient_bg/TextGradientBg";
 // import styles from "./Main.module.css";
 
 export default function Main() {
-  const frontLayerRef = useRef<HTMLDivElement>(null);
+  const parallaxLayerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const frontLayer = frontLayerRef.current;
+    const frontLayer = parallaxLayerRef.current;
 
     if (!frontLayer) return;
 
@@ -86,7 +86,7 @@ export default function Main() {
       />
 
       <div
-        ref={frontLayerRef}
+        ref={parallaxLayerRef}
         className={
           "absolute left-[45%] top-1/3 z-10 w-[12%] opacity-90 lg:left-[30%]"
         }
