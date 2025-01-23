@@ -5,10 +5,14 @@ import { Modal } from "antd";
 import Image from "next/image";
 import ring from "/public/images/ring.png";
 import styles from "./BlackHole.module.css";
+import useInViewPort from "@/hooks/useInViewPort";
 
 export default function BlackHole() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  const ringRef = useRef(null);
+  const inViewport = useInViewPort(ringRef, { threshold: 0.5 });
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -27,11 +31,12 @@ export default function BlackHole() {
   return (
     <>
       <Image
+        ref={ringRef}
         src={ring}
         alt="ring"
         // width={300}
         // height={300}
-        className={`${styles.shake} object-contain hover:cursor-pointer`}
+        className={`${styles.shake} ${inViewport ? "scale-100" : "scale-[10%]"} object-contain duration-[1500ms] ease-in-out hover:cursor-pointer`}
         onClick={showModal}
       />
 
