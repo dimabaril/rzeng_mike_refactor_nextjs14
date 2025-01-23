@@ -8,7 +8,7 @@ import CenterLine from "@/components/center_line/CenterLine";
 import BlackHole from "@/components/black_hole/BlackHole";
 import TextGradientBg from "@/components/text_gradient_bg/TextGradientBg";
 
-// import styles from "./Main.module.css";
+import styles from "./Main.module.css";
 
 export default function Main() {
   const parallaxLayerRef = useRef<HTMLDivElement>(null);
@@ -28,7 +28,7 @@ export default function Main() {
   }, []);
 
   return (
-    <div className="relative h-full">
+    <div className={`${styles.grid_bg} relative h-full`}>
       <div className="flex flex-col">
         <Image
           src="/images/photo_duo_bottom.png"

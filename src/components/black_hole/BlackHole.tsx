@@ -36,7 +36,7 @@ export default function BlackHole() {
         alt="ring"
         // width={300}
         // height={300}
-        className={`${styles.shake} ${inViewport ? "scale-100" : "scale-[10%]"} object-contain duration-[1500ms] ease-in-out hover:cursor-pointer`}
+        className={`${styles.shake} ${inViewport ? "scale-100" : "scale-0"} object-contain duration-[1500ms] ease-in-out hover:cursor-pointer`}
         onClick={showModal}
       />
 
