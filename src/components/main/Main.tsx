@@ -29,7 +29,7 @@ export default function Main() {
 
   return (
     <div className={`${styles.grid_bg} relative h-full`}>
-      <div className="flex flex-col">
+      <div className="flex flex-col bg-gradient-to-r from-black to-transparent">
         <Image
           src="/images/photo_duo_bottom.png"
           alt="photo"
