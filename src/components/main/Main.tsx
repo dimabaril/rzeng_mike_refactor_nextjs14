@@ -31,8 +31,8 @@ export default function Main() {
 
   return (
     <div className="relative h-full">
-      <div className={styles.grid_bg}>
-        <div className={styles.gradient_black_to_transparent}>
+      <div className={` ${styles.grid_bg}`}>
+        <div className={` ${styles.gradient_black_to_transparent}`}>
           <Image
             src="/images/photo_duo_bottom.png"
             alt="photo"
@@ -41,7 +41,7 @@ export default function Main() {
             priority
           />
 
-          <div className="z-20 ml-auto lg:w-1/2">
+          <div className="relative z-10 ml-auto lg:w-1/2">
             <p className="p-5">
               Rzeng & Mike Iv are a duo of intermedia artists engaged in
               creation of an intense abstraction - audio-visual
@@ -66,21 +66,21 @@ export default function Main() {
               experimental cross-media improvisation.
             </p>
           </div>
+          <video
+            className="-mt-48"
+            // width="1200"
+            // height="676"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+          >
+            <source src="/videos/web_video_1200.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
-
-      <video
-        width="1200"
-        height="676"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
-      >
-        <source src="/videos/web_video_1200.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
 
       <TextGradientBg />
 
@@ -95,16 +95,17 @@ export default function Main() {
       <div
         ref={parallaxLayerRef}
         className={
-          "absolute left-[45%] top-1/3 z-10 w-[12%] opacity-90 lg:left-[30%]"
+          "absolute left-[45%] top-1/3 w-[12%] opacity-90 lg:left-[30%]"
         }
       >
         <CenterLine />
       </div>
 
-      <div className="absolute right-[5%] top-16 z-10 aspect-square w-1/3 lg:w-1/5">
+      <div className="absolute right-[5%] top-16 aspect-square w-1/3 lg:w-1/5">
         <BlackHole />
       </div>
-      <div className="absolute left-[5%] top-72 z-10 aspect-square w-1/5 lg:top-1/3 lg:w-1/6">
+
+      <div className="absolute left-[5%] top-72 aspect-square w-1/5 lg:top-1/3 lg:w-1/6">
         <BlackHole />
       </div>
     </div>
