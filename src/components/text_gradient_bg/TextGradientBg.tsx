@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import generateGradient from "./generateGradient";
 import styles from "./RunningLine.module.css";
+import localFont from "next/font/local";
+
+const mikeySMatrix = localFont({ src: "../../app/fonts/MikeySMatrix.woff2" });
 
 const COLORS_COUNT = 15;
 
@@ -20,7 +23,9 @@ const TextGradientBg = () => {
         background: gradient,
       }}
     >
-      <div className={`${styles.animate_marquee} inline-block`}>
+      <div
+        className={`${styles.animate_marquee} ${mikeySMatrix.className} inline-block antialiased`}
+      >
         <span>
           ....................fractal freedom that&apos;s what we strive for,
           but in fact....................

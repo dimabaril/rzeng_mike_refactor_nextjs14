@@ -45,7 +45,7 @@ export default function BlackHole() {
         className={`${styles.shake} ${inViewport ? "scale-100" : "scale-0"} absolute inset-0 duration-[1500ms] ease-in-out hover:cursor-pointer`}
         style={{
           backgroundImage:
-            "radial-gradient(circle at center,black  40%, transparent 50%, white 60%, transparent 70%",
+            "radial-gradient(circle at center, black 40%, transparent 50%, white 60%, transparent 70%",
         }}
         onClick={showModal}
       />
