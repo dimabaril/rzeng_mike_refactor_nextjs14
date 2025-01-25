@@ -2,8 +2,8 @@
 
 import React, { useRef, useState } from "react";
 import { Modal } from "antd";
-import Image from "next/image";
-import ring from "/public/images/ring.png";
+// import Image from "next/image";
+// import ring from "/public/images/ring.png";
 import styles from "./BlackHole.module.css";
 import useInViewPort from "@/hooks/useInViewPort";
 
@@ -45,7 +45,8 @@ export default function BlackHole() {
         className={`${styles.shake} ${inViewport ? "scale-100" : "scale-0"} absolute inset-0 duration-[1500ms] ease-in-out hover:cursor-pointer`}
         style={{
           backgroundImage:
-            "radial-gradient(circle at center, black 40%, transparent 50%, white 60%, transparent 70%",
+            // "radial-gradient(circle at center, black 40%, transparent 52%, white 61%, transparent 70%)",
+            "radial-gradient(circle at center, black 25%, transparent 54%, white 61%, transparent 68%), radial-gradient(circle at calc(50% + 2%) calc(50% - 2%), black 25%, transparent 54%, white 61%, transparent 68%)",
         }}
         onClick={showModal}
       />
