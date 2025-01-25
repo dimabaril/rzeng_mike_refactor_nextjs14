@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import CenterLine from "@/components/center_line/CenterLine";
 import BlackHole from "@/components/black_hole/BlackHole";
@@ -12,6 +12,7 @@ import styles from "./Main.module.css";
 
 export default function Main() {
   const parallaxLayerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const frontLayer = parallaxLayerRef.current;
@@ -27,6 +28,17 @@ export default function Main() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -84,19 +96,35 @@ export default function Main() {
 
       <TextGradientBg />
 
-      <Image
+      {/* <Image
+        className=""
         src="/images/Copy of IMG_0349-cc.jpg"
         alt="photo"
         width={1200}
         height={550}
-        className="w-full"
-      />
+      /> */}
+
+      {isMobile ? (
+        <Image
+          className=""
+          src="/images/Copy of IMG_0349-cc_mobile.jpg"
+          alt="photo"
+          width={1080}
+          height={777}
+        />
+      ) : (
+        <Image
+          className=""
+          src="/images/Copy of IMG_0349-cc.jpg"
+          alt="photo"
+          width={1200}
+          height={550}
+        />
+      )}
 
       <div
         ref={parallaxLayerRef}
-        className={
-          "absolute left-[45%] top-1/3 w-[12%] opacity-90 lg:left-[30%]"
-        }
+        className={"absolute left-[45%] top-1/3 w-[12%] lg:left-[30%]"}
       >
         <CenterLine />
       </div>

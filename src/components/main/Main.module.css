@@ -25,7 +25,13 @@
 .gradient_black_to_transparent {
   /* display: flex;
   flex-direction: column; */
-  background-image: linear-gradient(to right, black, transparent);
+  background-image: linear-gradient(
+    to right,
+    black,
+    black 25%,
+    transparent 75%,
+    transparent
+  );
   background-size: 300% 100%;
   animation: move 3s linear infinite;
 }

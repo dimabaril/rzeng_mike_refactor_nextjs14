@@ -22,10 +22,10 @@ function generateGradient(colorCount: number) {
 
   let gradient = "repeating-linear-gradient(0deg, ";
   let position = 0;
-  const smoothness = 2; // Сглаживание перехода
+  const smoothness = 5; // Сглаживание перехода
 
   for (let i = 0; i < colors.length; i++) {
-    const size = Math.floor(Math.random() * 10) + 20; // Размер от 20px до 70px
+    const size = Math.floor(Math.random() * 8) + 17; // Размер от 20px до 70px
     const gap = Math.floor(Math.random() * 5) + 7; // Промежуток от 10px до 40px
     gradient += `${colors[i]} ${position}px, ${colors[i]} ${position + size}px, `;
     position += size + smoothness;

@@ -76,7 +76,7 @@ const Particles = () => {
     };
 
     // Определяем количество центров плотности
-    const densityCentersCount = Math.floor(Math.random() * 10) + 5; // от 5 до 15 центров
+    const densityCentersCount = Math.floor(Math.random() * 5) + 10; // от 10 до 15 центров
 
     // Генерируем случайные центры плотности
     const densityCenters = [];
@@ -109,7 +109,7 @@ const Particles = () => {
     scene.add(ParticlesSystem);
 
     // Камера и вращение
-    camera.position.z = 13;
+    camera.position.z = 10;
 
     const dampingFactor = 0.98; // Damping factor for gradual deceleration
     const minRotationSpeed = 0.005; // Minimum rotation speed
