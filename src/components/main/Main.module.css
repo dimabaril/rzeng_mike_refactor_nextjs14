@@ -8,7 +8,24 @@
     repeating-linear-gradient(
       to bottom,
       transparent 0 50px,
-      rgba(255, 255, 255, 0.3) 50px,
-      rgba(255, 255, 255, 0.3) 51px
+      rgba(255, 255, 255, 0.5) 50px,
+      rgba(255, 255, 255, 0.5) 51px
     );
+}
+
+@keyframes move {
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.gradient_black_to_transparent {
+  /* display: flex;
+  flex-direction: column; */
+  background-image: linear-gradient(to right, black, transparent);
+  background-size: 300% 100%;
+  animation: move 3s linear infinite;
 }

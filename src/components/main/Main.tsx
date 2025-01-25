@@ -32,7 +32,7 @@ export default function Main() {
   return (
     <div className="relative h-full">
       <div className={styles.grid_bg}>
-        <div className="flex flex-col bg-gradient-to-r from-black to-transparent">
+        <div className={styles.gradient_black_to_transparent}>
           <Image
             src="/images/photo_duo_bottom.png"
             alt="photo"
