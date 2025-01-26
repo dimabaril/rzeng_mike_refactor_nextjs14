@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import CenterLine from "@/components/center_line/CenterLine";
 import BlackHole from "@/components/black_hole/BlackHole";
 import TextGradientBg from "@/components/text_gradient_bg/TextGradientBg";
+import TitleEnd from "@/components/title_main/TitleEnd";
 
 import styles from "./Main.module.css";
 
@@ -104,23 +105,31 @@ export default function Main() {
         height={550}
       /> */}
 
-      {isMobile ? (
-        <Image
-          className=""
-          src="/images/Copy of IMG_0349-cc_mobile.jpg"
-          alt="photo"
-          width={1080}
-          height={777}
-        />
-      ) : (
-        <Image
-          className=""
-          src="/images/Copy of IMG_0349-cc.jpg"
-          alt="photo"
-          width={1200}
-          height={550}
-        />
-      )}
+      <div className="relative">
+        {isMobile ? (
+          <Image
+            className=""
+            src="/images/Copy of IMG_0349-cc_mobile.jpg"
+            alt="photo"
+            width={1080}
+            height={777}
+          />
+        ) : (
+          <Image
+            className=""
+            src="/images/Copy of IMG_0349-cc.jpg"
+            alt="photo"
+            width={1200}
+            height={550}
+          />
+        )}
+
+        <div className="absolute bottom-0 left-1/4 -translate-x-1/2 translate-y-1/2">
+          <TitleEnd>
+            0<span className="text-red-600">X</span>1
+          </TitleEnd>
+        </div>
+      </div>
 
       <div
         ref={parallaxLayerRef}

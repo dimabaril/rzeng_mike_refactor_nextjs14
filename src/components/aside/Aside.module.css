@@ -3,14 +3,14 @@
   height: 100%;
   background: repeating-linear-gradient(
     to top,
-    black 0%,
-    black 58%,
+    transparent 0%,
+    transparent 58%,
     white 60%,
-    black 62%,
-    black 63%,
+    transparent 62%,
+    transparent 63%,
     white 65%,
-    black 67%,
-    black 100%
+    transparent 67%,
+    transparent 100%
   );
 }
 
