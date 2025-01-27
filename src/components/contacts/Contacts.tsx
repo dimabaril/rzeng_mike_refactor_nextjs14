@@ -1,20 +1,17 @@
 const hrefs = ["https://snezhanareizen.xyz", "http://mikeiv.art"];
 
-import BlinkingLink from "./BlinkingLink";
+import BlinkingContainer from "@/components/BlinkingContainer/BlinkingContainer";
 
 export default function Contacts() {
   return (
-    <ul className="flex flex-col gap-2 text-base text-white">
+    <ul className="flex flex-col gap-4">
       {hrefs.map((href, index) => (
         <li key={index}>
-          {/* <a
-            className="block bg-neutral-800 px-6 py-1"
-            href={href}
-            target="_blank"
-          >
-            {href}
-          </a> */}
-          <BlinkingLink href={href} />
+          <BlinkingContainer>
+            <a className="block p-1" href={href} target="_blank">
+              {href}
+            </a>
+          </BlinkingContainer>
         </li>
       ))}
     </ul>

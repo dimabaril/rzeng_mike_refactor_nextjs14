@@ -2,9 +2,9 @@ import styles from "./Aside.module.css";
 
 export default function Aside() {
   return (
-    <aside className={`${styles.scroll_on_hover} h-screen`}>
-      <div className="h-full bg-aside bg-cover"></div>
-      <div className="h-full bg-aside bg-cover"></div>
-    </aside>
+    <div className={styles.container}>
+      <div className={styles.sub_container}></div>
+      <div className={styles.sub_container}></div>
+    </div>
   );
 }

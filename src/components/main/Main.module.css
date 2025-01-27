@@ -1,26 +1,37 @@
-.hide_scrollbar {
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+.grid_bg {
+  background: repeating-linear-gradient(
+      to right,
+      transparent 0 50px,
+      rgba(255, 255, 255, 0.3) 50px,
+      rgba(255, 255, 255, 0.3) 51px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 50px,
+      rgba(255, 255, 255, 0.5) 50px,
+      rgba(255, 255, 255, 0.5) 51px
+    );
 }
 
-.hide_scrollbar::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+@keyframes move {
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
-.parallax {
-  position: relative;
+.gradient_black_to_transparent {
+  /* display: flex;
+  flex-direction: column; */
+  background-image: linear-gradient(
+    to right,
+    black,
+    black 25%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 300% 100%;
+  animation: move 3s linear infinite;
 }
-
-.parallax__layer {
-  left: 45%;
-  height: 200%;
-}
-
-/* .smooth_edges {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-}
-
-.blur_background {
-  backdrop-filter: blur(10px); 
-  -webkit-backdrop-filter: blur(10px); 
-} */

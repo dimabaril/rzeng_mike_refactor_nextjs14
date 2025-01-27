@@ -1,7 +1,14 @@
-export default function TitleMain() {
+import { FC, PropsWithChildren } from "react";
+
+const TitleMain: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <h1 className="bg-neutral-500 bg-opacity-50 text-4xl xl:text-6xl 2xl:text-8xl">
-      Zero.night
+    <h1
+      className="text-8xl font-thin text-white"
+      style={{ letterSpacing: "0.2em" }}
+    >
+      {children}
     </h1>
   );
-}
+};
+
+export default TitleMain;
