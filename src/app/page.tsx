@@ -25,8 +25,15 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleContextMenu = (event: React.MouseEvent) => {
+    event.preventDefault();
+  };
+
   return (
-    <div className="relative overflow-clip">
+    <div
+      className="relative select-none overflow-clip"
+      onContextMenu={handleContextMenu}
+    >
       <div className="absolute z-10 mx-auto h-screen w-full"></div>
       <div className="sticky top-0 -z-10 h-screen">
         <Particles />

@@ -11,9 +11,9 @@ const TextGradientBg = () => {
   const [gradient, setGradient] = useState("");
 
   useEffect(() => {
-    // if (window.innerWidth >= 1000) {
-    setGradient(generateGradient(COLORS_COUNT));
-    // }
+    if (window.innerWidth >= 1000) {
+      setGradient(generateGradient(COLORS_COUNT));
+    }
   }, []);
 
   return (

@@ -37,7 +37,7 @@ const TitleMain = () => {
   return (
     <h2
       className="text-8xl font-thin text-white"
-      style={{ letterSpacing: "0.2em" }}
+      style={{ letterSpacing: "0.1em" }}
       onPointerEnter={handleMouseEnter}
       onPointerLeave={handleMouseLeave}
     >
