@@ -7,8 +7,14 @@ import { isMobile } from "react-device-detect";
 // import ring from "/public/images/ring.png";
 import styles from "./BlackHole.module.css";
 import useInViewPort from "@/hooks/useInViewPort";
+import BlinkingContainer from "../BlinkingContainer/BlinkingContainer";
 
-export default function BlackHole() {
+type vimeoProps = {
+  vimeoId: number;
+  startFrom?: number;
+};
+
+export default function BlackHole({ vimeoId, startFrom }: vimeoProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
@@ -43,14 +49,16 @@ export default function BlackHole() {
 
       <div
         ref={ringRef}
-        className={`${styles.shake} ${inViewport ? "scale-100" : "scale-0"} absolute inset-0 duration-[1500ms] ease-in-out hover:cursor-pointer`}
+        className={`${styles.shake} ${inViewport ? "scale-100" : "scale-0"} absolute inset-0 flex items-center justify-center text-2xl text-neutral-800 duration-[1500ms] ease-in-out hover:cursor-pointer lg:text-5xl`}
         style={{
           backgroundImage:
             // "radial-gradient(circle at center, black 40%, transparent 52%, white 61%, transparent 70%)",
-            "radial-gradient(circle at center, black 25%, transparent 54%, white 61%, transparent 68%), radial-gradient(circle at calc(50% + 2%) calc(50% - 2%), black 25%, transparent 54%, white 61%, transparent 68%)",
+            "radial-gradient(circle at center, black 20%, transparent 54%, white 61%, transparent 68%), radial-gradient(circle at calc(50% + 2%) calc(50% - 2%), black 20%, transparent 54%, white 61%, transparent 68%)",
         }}
         onClick={showModal}
-      />
+      >
+        <BlinkingContainer>▶︎</BlinkingContainer>
+      </div>
 
       <Modal
         className="p-0"
@@ -81,7 +89,7 @@ export default function BlackHole() {
         <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
           <iframe
             ref={iframeRef}
-            src={`https://player.vimeo.com/video/280087401?autoplay=1&playsinline=1&controls=${isMobile ? 1 : 0}&muted=${isMobile ? 1 : 0}&loop=1#t=6s`}
+            src={`https://player.vimeo.com/video/${vimeoId}?autoplay=1&playsinline=1&controls=${isMobile ? 1 : 0}&muted=${isMobile ? 1 : 0}&loop=1#t=${startFrom ? startFrom : 0}s`}
             allow="autoplay; fullscreen"
             className="absolute left-0 top-0 h-full w-full"
             title="Rzeng - Tg X"

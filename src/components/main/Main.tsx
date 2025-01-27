@@ -134,11 +134,19 @@ export default function Main() {
       </div>
 
       <div className="absolute right-[5%] top-16 aspect-square w-1/3 lg:w-1/5">
-        <BlackHole />
+        <BlackHole vimeoId={280087401} startFrom={6} />
       </div>
 
       <div className="absolute left-[5%] top-72 aspect-square w-1/5 lg:top-1/3 lg:w-1/6">
-        <BlackHole />
+        <BlackHole vimeoId={1044695863} />
+      </div>
+
+      <div className="absolute bottom-5 left-[10%] aspect-square w-3/12 lg:bottom-[37%] lg:w-1/5">
+        <BlackHole vimeoId={1044696793} />
+      </div>
+
+      <div className="absolute bottom-60 right-[5%] aspect-square w-1/5 lg:bottom-[43%] lg:w-1/6">
+        <BlackHole vimeoId={1044701271} />
       </div>
     </div>
   );
