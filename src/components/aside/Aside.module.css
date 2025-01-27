@@ -6,8 +6,8 @@
     transparent 0%,
     transparent 58%,
     white 60%,
-    transparent 62%,
-    transparent 63%,
+    black 62%,
+    black 63%,
     white 65%,
     transparent 67%,
     transparent 100%
@@ -15,7 +15,6 @@
 }
 
 .container {
-  position: relative;
   width: 100%;
   height: 100vh;
 

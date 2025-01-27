@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { Modal } from "antd";
+import { isMobile } from "react-device-detect";
 // import Image from "next/image";
 // import ring from "/public/images/ring.png";
 import styles from "./BlackHole.module.css";
@@ -80,7 +81,7 @@ export default function BlackHole() {
         <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
           <iframe
             ref={iframeRef}
-            src="https://player.vimeo.com/video/280087401?autoplay=1&amp;controls=0&amp;loop=1#t=6s"
+            src={`https://player.vimeo.com/video/280087401?autoplay=1&playsinline=1&controls=${isMobile ? 1 : 0}&muted=${isMobile ? 1 : 0}&loop=1#t=6s`}
             allow="autoplay; fullscreen"
             className="absolute left-0 top-0 h-full w-full"
             title="Rzeng - Tg X"

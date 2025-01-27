@@ -8,7 +8,7 @@ export default function Contacts() {
       {hrefs.map((href, index) => (
         <li key={index}>
           <BlinkingContainer>
-            <a className={"block p-1"} href={href} target="_blank">
+            <a className="block p-1" href={href} target="_blank">
               {href}
             </a>
           </BlinkingContainer>

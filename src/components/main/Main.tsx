@@ -10,6 +10,7 @@ import TextGradientBg from "@/components/text_gradient_bg/TextGradientBg";
 import TitleEnd from "@/components/title_main/TitleEnd";
 
 import styles from "./Main.module.css";
+import Contacts from "../contacts/Contacts";
 
 export default function Main() {
   const parallaxLayerRef = useRef<HTMLDivElement>(null);
@@ -97,14 +98,6 @@ export default function Main() {
 
       <TextGradientBg />
 
-      {/* <Image
-        className=""
-        src="/images/Copy of IMG_0349-cc.jpg"
-        alt="photo"
-        width={1200}
-        height={550}
-      /> */}
-
       <div className="relative">
         {isMobile ? (
           <Image
@@ -125,10 +118,12 @@ export default function Main() {
         )}
 
         <div className="absolute bottom-0 left-1/4 -translate-x-1/2 translate-y-1/2">
-          <TitleEnd>
-            0<span className="text-red-600">X</span>1
-          </TitleEnd>
+          <TitleEnd />
         </div>
+      </div>
+
+      <div className="flex justify-center py-32 text-xl text-white">
+        <Contacts />
       </div>
 
       <div
