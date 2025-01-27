@@ -34,14 +34,6 @@ const TextGradientBg = () => {
           ....................fractal freedom that&apos;s what we strive for,
           but in fact....................
         </span>
-        <span>
-          ....................fractal freedom that&apos;s what we strive for,
-          but in fact....................
-        </span>
-        <span>
-          ....................fractal freedom that&apos;s what we strive for,
-          but in fact....................
-        </span>
       </div>
     </div>
   );
