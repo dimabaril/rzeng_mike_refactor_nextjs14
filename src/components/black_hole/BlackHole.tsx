@@ -49,7 +49,7 @@ export default function BlackHole({ vimeoId, startFrom }: vimeoProps) {
 
       <div
         ref={ringRef}
-        className={`${styles.shake} ${inViewport ? "scale-100" : "scale-0"} absolute inset-0 flex items-center justify-center text-5xl text-neutral-800 duration-[1500ms] ease-in-out hover:cursor-pointer`}
+        className={`${styles.shake} ${inViewport ? "scale-100" : "scale-0"} absolute inset-0 flex items-center justify-center text-2xl text-neutral-800 duration-[1500ms] ease-in-out hover:cursor-pointer lg:text-5xl`}
         style={{
           backgroundImage:
             // "radial-gradient(circle at center, black 40%, transparent 52%, white 61%, transparent 70%)",
