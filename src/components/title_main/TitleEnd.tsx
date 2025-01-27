@@ -1,19 +1,20 @@
-import { SetStateAction, useRef, useState } from "react";
-import localFont from "next/font/local";
+import { useRef, useState } from "react";
+// import localFont from "next/font/local";
 
-const ichingFont = localFont({ src: "../../app/fonts/ICHING.woff2" });
+// const ichingFont = localFont({ src: "../../app/fonts/ICHING.woff2" });
 
 // const startUnicode = 0x20;
 // const endUnicode = 0x7e;
-
 // const characters: string[] = [];
 // for (let code = startUnicode; code <= endUnicode; code++) {
 //   characters.push(String.fromCharCode(code));
 // }
 
 const TitleMain = () => {
-  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const [currentChar, setCurrentChar] = useState("X");
+  // const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const alphabet =
+    "䷀䷁䷂䷃䷄䷅䷆䷇䷈䷉䷊䷋䷌䷍䷎䷏䷐䷑䷒䷓䷔䷕䷖䷗䷘䷙䷚䷛䷜䷝䷞䷟䷠䷡䷢䷣䷤䷥䷦䷧䷨䷩䷪䷫䷬䷭䷮䷯䷰䷱䷲䷳䷴䷵䷶䷷䷸䷹䷺䷻䷼䷽䷾䷿";
+  const [currentChar, setCurrentChar] = useState("䷀");
   const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
   const indexRef = useRef(0);
 
@@ -40,8 +41,10 @@ const TitleMain = () => {
       onPointerEnter={handleMouseEnter}
       onPointerLeave={handleMouseLeave}
     >
-      0{/* <span className={`text-red-600 ${ichingFont.className}`}> */}
-      <span className="text-red-600">{currentChar}</span>1
+      <span>0</span>
+      {/* <span className={`text-red-600 ${ichingFont.className}`}></span> */}
+      <span className="text-red-600">{currentChar}</span>
+      <span>1</span>
     </h2>
   );
 };
