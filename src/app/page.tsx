@@ -4,10 +4,17 @@ import Aside from "@/components/aside/Aside";
 import Main from "@/components/main/Main";
 import TitleMain from "@/components/title_main/TitleMain";
 import Particles from "@/components/particles/Particles";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import useInViewPort from "@/hooks/useInViewPort";
 
 export default function Home() {
   const titleRef = useRef<HTMLDivElement>(null);
+  const mainRef = useRef<HTMLImageElement>(null);
+
+  const inViewport = useInViewPort(mainRef, {
+    threshold: 0,
+    rootMargin: "0px 0px -70% 0px",
+  });
 
   useEffect(() => {
     const title = titleRef.current;
@@ -34,14 +41,15 @@ export default function Home() {
       className="relative select-none overflow-clip"
       onContextMenu={handleContextMenu}
     >
-      <div className="absolute z-10 mx-auto h-screen w-full"></div>
       <div className="sticky top-0 -z-10 h-screen">
         <Particles />
       </div>
 
-      <div className="fixed top-0 w-full">
-        <Aside />
-      </div>
+      {inViewport && (
+        <div className="fixed top-0 w-full">
+          <Aside />
+        </div>
+      )}
 
       <div
         ref={titleRef}
@@ -50,7 +58,10 @@ export default function Home() {
         <TitleMain>0^n</TitleMain>
       </div>
 
-      <div className="z-20 mx-auto max-w-[1200px] text-xl text-white">
+      <div
+        ref={mainRef}
+        className="z-20 mx-auto max-w-[1200px] text-xl text-white"
+      >
         <Main />
       </div>
     </div>
