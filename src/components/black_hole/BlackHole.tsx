@@ -3,11 +3,8 @@
 import React, { useRef, useState } from "react";
 import { Modal } from "antd";
 import { isMobile } from "react-device-detect";
-// import Image from "next/image";
-// import ring from "/public/images/ring.png";
 import styles from "./BlackHole.module.css";
 import useInViewPort from "@/hooks/useInViewPort";
-import BlinkingContainer from "../BlinkingContainer/BlinkingContainer";
 
 type vimeoProps = {
   vimeoId: number;
@@ -37,40 +34,25 @@ export default function BlackHole({ vimeoId, startFrom }: vimeoProps) {
 
   return (
     <>
-      {/* <Image
-        ref={ringRef}
-        src={ring}
-        alt="ring"
-        // width={300}
-        // height={300}
-        className={`${styles.shake} ${inViewport ? "scale-100" : "scale-0"} object-contain duration-[1500ms] ease-in-out hover:cursor-pointer`}
-        onClick={showModal}
-      /> */}
-
       <div
         ref={ringRef}
-        className={`${styles.shake} ${inViewport ? "scale-100" : "scale-0"} absolute inset-0 flex items-center justify-center text-2xl text-neutral-800 duration-[1500ms] ease-in-out hover:cursor-pointer lg:text-5xl`}
+        className={`${styles.shake} ${inViewport ? "scale-100" : "scale-0"} absolute inset-0 aspect-square duration-[1500ms] ease-in-out hover:cursor-pointer`}
         style={{
           backgroundImage:
-            // "radial-gradient(circle at center, black 40%, transparent 52%, white 61%, transparent 70%)",
             "radial-gradient(circle at center, black 20%, transparent 54%, white 61%, transparent 68%), radial-gradient(circle at calc(50% + 2%) calc(50% - 2%), black 20%, transparent 54%, white 61%, transparent 68%)",
         }}
         onClick={showModal}
-      >
-        <BlinkingContainer>▶︎</BlinkingContainer>
-      </div>
+      ></div>
 
       <Modal
         className="p-0"
         width={1080}
-        // height={450}
         centered
         title={null}
         footer={null}
         open={isModalOpen}
         onCancel={handleCancel}
         keyboard={true}
-        // styles={{ body: { backgroundColor: "black" } }}
         modalRender={(modal) => {
           return React.isValidElement<React.HTMLAttributes<HTMLDivElement>>(
             modal,

@@ -13,7 +13,7 @@ export default function Home() {
 
   const inViewport = useInViewPort(mainRef, {
     threshold: 0,
-    rootMargin: "0px 0px -70% 0px",
+    rootMargin: "0px 0px -90% 0px",
   });
 
   useEffect(() => {
