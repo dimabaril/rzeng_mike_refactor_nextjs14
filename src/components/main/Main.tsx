@@ -1,16 +1,21 @@
 "use client";
 
-import Image from "next/image";
-
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import dynamic from "next/dynamic";
+
+import styles from "./Main.module.css";
 
 import CenterLine from "@/components/center_line/CenterLine";
 import BlackHole from "@/components/black_hole/BlackHole";
 import TextGradientBg from "@/components/text_gradient_bg/TextGradientBg";
 import TitleEnd from "@/components/title_main/TitleEnd";
+import Contacts from "@/components/contacts/Contacts";
+// import PingPong from "@/components/ping_pong/PingPong";
 
-import styles from "./Main.module.css";
-import Contacts from "../contacts/Contacts";
+const PingPong = dynamic(() => import("@/components/ping_pong/PingPong"), {
+  ssr: false,
+});
 
 export default function Main() {
   const parallaxLayerRef = useRef<HTMLDivElement>(null);
@@ -133,21 +138,18 @@ export default function Main() {
         <CenterLine />
       </div>
 
-      <div className="absolute right-[5%] top-16 aspect-square w-1/3 lg:w-1/5">
+      <PingPong>
         <BlackHole vimeoId={280087401} startFrom={6} />
-      </div>
-
-      <div className="absolute left-[5%] top-72 aspect-square w-1/5 lg:top-1/3 lg:w-1/6">
+      </PingPong>
+      <PingPong>
         <BlackHole vimeoId={1044695863} />
-      </div>
-
-      <div className="absolute bottom-5 left-[10%] aspect-square w-3/12 lg:bottom-[37%] lg:w-1/5">
+      </PingPong>
+      <PingPong>
         <BlackHole vimeoId={1044696793} />
-      </div>
-
-      <div className="absolute bottom-60 right-[5%] aspect-square w-1/5 lg:bottom-[43%] lg:w-1/6">
+      </PingPong>
+      <PingPong>
         <BlackHole vimeoId={1044701271} />
-      </div>
+      </PingPong>
     </div>
   );
 }
