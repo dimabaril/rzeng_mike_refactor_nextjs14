@@ -1,4 +1,8 @@
-const hrefs = ["https://snezhanareizen.xyz", "http://mikeiv.art"];
+const hrefs = [
+  "https://snezhanareizen.xyz",
+  "http://mikeiv.art",
+  "mailto:zero.night@zohomail.com",
+];
 
 import BlinkingContainer from "@/components/BlinkingContainer/BlinkingContainer";
 

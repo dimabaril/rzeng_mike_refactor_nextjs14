@@ -18,7 +18,7 @@ const getRandomDuration = () => {
 const PingPong = ({ children }: { children: ReactNode }) => {
   const [position, setPosition] = useState(getRandomPosition());
   const [size, setSize] = useState(getRandomSize());
-  const [duration, setDuration] = useState(3);
+  const [duration, setDuration] = useState(2);
 
   useEffect(() => {
     const interval = setInterval(() => {

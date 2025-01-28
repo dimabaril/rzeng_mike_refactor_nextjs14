@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 
 import styles from "./Main.module.css";
 
@@ -10,7 +11,11 @@ import BlackHole from "@/components/black_hole/BlackHole";
 import TextGradientBg from "@/components/text_gradient_bg/TextGradientBg";
 import TitleEnd from "@/components/title_main/TitleEnd";
 import Contacts from "@/components/contacts/Contacts";
-import PingPong from "@/components/ping_pong/PingPong";
+// import PingPong from "@/components/ping_pong/PingPong";
+
+const PingPong = dynamic(() => import("@/components/ping_pong/PingPong"), {
+  ssr: false,
+});
 
 export default function Main() {
   const parallaxLayerRef = useRef<HTMLDivElement>(null);
