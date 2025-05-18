@@ -1,5 +1,5 @@
 const hrefs = [
-  "https://snezhanareizen.xyz",
+  "https://www.alienationindex.xyz/rzeng",
   "http://mikeiv.art",
   "mailto:zero.night@zohomail.com",
 ];
